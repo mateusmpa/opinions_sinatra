@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>Welcome to OpinionsApp</h1>
+      <form action="/opinions" method="post">
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author">
+        <label for="opinion">Opinion:</label>
+        <input type="text" id="opinion" name="opinion">
+        <button type="submit">Say it!</button>
+      </form>
+      <% opinions.each do |opinion| %>
+        <p><%= opinion[:opinion] %></p>
+        <p><%= opinion[:author] %></p>
+      <% end %>
+    </div>
+  </body>
+</html>
