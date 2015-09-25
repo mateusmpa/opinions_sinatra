@@ -2,22 +2,70 @@
 <html>
   <head>
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
   </head>
+
   <body>
-    <div class="container-fluid">
-      <h1>Welcome to OpinionsApp</h1>
-      <form action="/opinions" method="post">
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author">
-        <label for="opinion">Opinion:</label>
-        <input type="text" id="opinion" name="opinion">
-        <button type="submit">Say it!</button>
-      </form>
-      <% opinions.each do |opinion| %>
-        <p><%= opinion[:opinion] %></p>
-        <p><%= opinion[:author] %></p>
-      <% end %>
+
+    <nav class="navbar navbar-default">
+
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Opinions App</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Sobre</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </nav>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 form-opinion">
+          <h1 class="text-center">Welcome to OpinionsApp</h1>
+          <form action="/opinions" method="post">
+            <div class="form-group">
+              <label for="author">Author:</label>
+              <input type="text" class="form-control" id="author" placeholder="Author" name="author">
+            </div>
+            <div class="form-group">
+              <label for="opinion">Opinion:</label>
+              <input type="text" class="form-control" id="opinion" placeholder="Opinion" name="opinion">
+            </div>
+            <button type="submit" class="btn btn-primary">Say it!</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <% opinions.each do |opinion| %>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p><%= opinion[:opinion] %></p>
+              <p><%= opinion[:author] %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
     </div>
+
+
+    <footer class="footer-">
+      <div class="container">
+        São Paulo - SP
+      </div>
+    </footer>
   </body>
 </html>
